@@ -9,17 +9,17 @@ import IconSearch from './assets/search.svg';
 
 function App() {
   
-  const [movies, setMovies] = useState([]);
+  const [types, setTypes] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
-  useEffect(() => { searchMovies('Batman'); }, []);
+  useEffect(() => { searchTypes('Batman'); }, []);
 
   const API_URL = 'http://www.omdbapi.com?apikey=5f835cf2';
 
-  const searchMovies = async (title: any) => {
+  const searchTypes = async (title: any) => {
     const responseTitle = await fetch(`${ API_URL }&s=${ title }`);
     const data = await responseTitle.json();
-    setMovies(data.Search);
+    setTypes(data.Search);
   }
 
   return <div>
@@ -40,13 +40,13 @@ function App() {
         <img 
           src={ IconSearch } 
           alt="search" 
-          onClick={ ()=> searchMovies(searchTerm)}
+          onClick={ ()=> searchTypes(searchTerm)}
         />
       </div>
     </div>
 
     {
-      movies?.length > 0 && ( <div className="container"> { movies.map((movie) => (<Card movie = { movie }/>)) } </div> )
+      types?.length > 0 && ( <div className="container"> { types.map((type) => (<Card type = { type }/>)) } </div> )
     }
 
     <Footer footer="Zehra Nur Kök © "/>
