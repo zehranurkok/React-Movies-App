@@ -14,7 +14,8 @@ function App() {
 
   useEffect(() => { searchTypes('Batman'); }, []);
 
-  const API_URL = 'http://www.omdbapi.com?apikey=5f835cf2';
+
+  const API_URL = 'http://www.omdbapi.com?apikey=' + import.meta.env.VITE_API_KEY;
 
   const searchTypes = async (title: any) => {
     const responseTitle = await fetch(`${ API_URL }&s=${ title }`);
