@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  color: #182957;
+  margin: 0px;
+}
+
+.container {
+  background-color: #FFF;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin: 10px 10px;
+}
+
+.card {
+  align-items: center;
+  border-radius: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.6rem rgba(24, 41, 87, 0.6901960784), -0.2rem -0.2rem 0.5rem #fff;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  justify-content: center;
+  margin: 20px;
+}
+.card__title {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 20px;
+}
+.card__img img {
+  height: 100%;
+  width: 100%;
+}
+.card__context {
+  flex-direction: row;
+  margin: 5px 20px;
+}
+.card__imdb {
+  justify-content: flex-end;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 10px 1px #EE4B5E;
+  cursor: pointer;
+}
+
+.search {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 30px 10px;
+}
+.search img {
+  cursor: pointer;
+  margin-left: 30px;
+  width: 50px;
+}
+.search__input {
+  background: none;
+  box-shadow: inset 0rem 0rem 0.7rem #c8d0e7;
+  border: none;
+  border-radius: 1rem;
+  color: #9baacf;
+  font-size: 1.4rem;
+  padding-left: 1.8rem;
+  height: 3.5rem;
+  width: 20.4rem;
+}
+.search__input::placeholder {
+  color: #bec8e4;
+}
+.search__input:focus {
+  box-shadow: 0.2rem 0.2rem 0.6rem rgba(24, 41, 87, 0.6901960784), -0.2rem -0.2rem 0.5rem #fff;
+  outline: none;
+}
+
+.none {
+  justify-content: center;
+}
+
+header {
+  align-items: center;
+  background-color: #182957;
+  display: flex;
+  justify-content: center;
+}
+header h1 {
+  color: #FFF;
+}
+
+footer {
+  background-color: #EE4B5E;
+  bottom: 0;
+  color: #FFF;
+  display: flex;
+  font-weight: bold;
+  float: left;
+  justify-content: center;
+  padding: 10px 0px;
+  width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    margin: 20px;
+  }
+  .search__input {
+    background: none;
+    box-shadow: inset 0rem 0rem 0.7rem #c8d0e7;
+    border: none;
+    border-radius: 1rem;
+    color: #9baacf;
+    font-size: 1.1rem;
+    padding-left: 1.8rem;
+    height: 3.5rem;
+    width: 100%;
+  }
+  .search img {
+    width: 40px;
+    margin-left: 2.2rem;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
