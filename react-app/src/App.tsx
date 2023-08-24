@@ -12,14 +12,23 @@ function App() {
   const [types, setTypes] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
-  useEffect(() => { searchTypes('Batman'); }, []);
+  useEffect(() => { 
+    searchNames('Batman');
+    document.title = 'Movies and TV Shows';
+  }, []);
 
 
   const API_URL = 'http://www.omdbapi.com?apikey=' + import.meta.env.VITE_API_KEY;
 
-  const searchTypes = async (title: any) => {
-    const responseTitle = await fetch(`${ API_URL }&s=${ title }`);
-    const data = await responseTitle.json();
+  const searchNames = async (title: any) => {
+    const responseName = await fetch(`${ API_URL }&s=${ title }`);
+    const data = await responseName.json();
+    setTypes(data.Search);
+  }
+
+  const searchYears = async (year: any) => {
+    const responseYear = await fetch(`${ API_URL }&y=${ year }`);
+    const data = await responseYear.json();
     setTypes(data.Search);
   }
 
@@ -41,13 +50,13 @@ function App() {
         <img 
           src={ IconSearch } 
           alt="search" 
-          onClick={ ()=> searchTypes(searchTerm)}
+          onClick={ ()=> searchNames(searchTerm) || searchYears(searchTerm)}
         />
       </div>
     </div>
 
     {
-      types?.length > 0 && ( <div className="container"> { types.map((type) => (<Card type = { type }/>)) } </div> )
+      types?.length > 0 && ( <div className="container"> { types.map((type) => (<Card type = { type }/> ))} </div> )
     }
 
     <Footer footer="Zehra Nur Kök © "/>
