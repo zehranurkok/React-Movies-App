@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 (./src/assets/example.png)
 
 ## Overview
@@ -46,3 +47,6 @@ That's it!
 
 
 
+=======
+# React-Vite-TS Movies App
+>>>>>>> a2e03420cea577af453694123b23b48924579f33
