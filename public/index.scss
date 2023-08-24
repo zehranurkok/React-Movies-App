@@ -253,7 +253,13 @@ footer{
   }
 }
 
-
+.pagination {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
 
 @keyframes action {
   0%   {background-color: $mainColor-Navy; top:0px;}

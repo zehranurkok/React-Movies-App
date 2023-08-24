@@ -8,6 +8,7 @@ function Card({type}: {type:any}) {
   return (
     <>
       {/* Card creation */}
+      
       {contentVisible === true ? <Content onClose={() => setContentVisible(false)} type={type} /> 
         
       :<div className="card" key={type.imdbID}>
@@ -29,13 +30,8 @@ function Card({type}: {type:any}) {
         <button onClick={() => setContentVisible(true)}>
           Content
         </button>
-
-        
-
       </div>
-        
       } 
-      
     </>
   );
 }

@@ -5,12 +5,15 @@ import Footer from "./components/Footer";
 import { useState, useEffect } from "react";
 
 import IconSearch from './assets/search.svg';
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 
 function App() {
   
   // Use of Hooks
   const [types, setTypes] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  
 
   useEffect(() => { 
     document.title = 'Movies and TV Shows';
@@ -25,6 +28,7 @@ function App() {
   const searchNames = async (title: any) => {
     const responseName = await fetch(`${ API_URL }&s=${ title }`);
     const data = await responseName.json();
+    const totalResults = setTypes(data.Search.totalResults);
     setTypes(data.Search);
     console.log(data.Search);
   }
@@ -60,6 +64,8 @@ function App() {
               { types.map((type) => (<Card type = { type } /> )) } 
           </div> )
     }
+
+    <Pagination className="pagination" count={10} showFirstButton showLastButton />
 
     <Footer footer="Movies and TV Shows App created by Zehra Nur Kök © "/>
     </div>
