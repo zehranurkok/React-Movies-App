@@ -1,1 +1,1 @@
-# React-Movies-App
+# React-Vite-TS Movies App
