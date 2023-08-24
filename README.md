@@ -38,7 +38,7 @@ Copy your Key in the field that says YOUR KEY.
 
 # 2. Use API Key
 
-Create your .env file in the root directory as indicated by the red arrow below. Then paste the Key that you copied into the area indicated by the red square.
+Create your .env file in the root directory as indicated by the red arrow below. Then paste the Key you copied into the red area by typing it into the .env file as shown on the right below.
 
 ![UseAPI](./src/assets/envfile.png)
 
