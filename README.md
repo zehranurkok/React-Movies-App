@@ -27,7 +27,7 @@ Please follow the steps below for the application to work properly.
 
 You can [visit OMDb API Page](http://www.omdbapi.com/apikey.aspx) to get API Key.
 
-Fill in the fields shown in red below.
+Fill in the fields shown in red below. Then click the SUBMIT button.
 
 ![OMDbAPI1](./src/assets/omdbAPI1.png)
 
