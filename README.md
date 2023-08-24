@@ -1,4 +1,4 @@
-(./src/assets/example.png)
+![Exapmle](./src/assets/example.png)
 
 ## Overview
 
@@ -28,10 +28,12 @@ Please follow the steps below for the application to work properly.
 You can [visit OMDb API Page](http://www.omdbapi.com/apikey.aspx) to get API Key.
 
 Fill in the fields shown in red below.
+
 (./src/assets/omdbAPI1.png)
 
 Then check your mail and activate your API Key by clicking the link shown with the red arrow below.
 Copy your Key in the field that says YOUR KEY.
+
 (./src/assets/omdbAPI2.png)
 
 # 2. Use API Key
