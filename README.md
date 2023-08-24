@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 (./src/assets/example.png)
 
 ## Overview
@@ -41,12 +40,3 @@ Create your .env file in the root directory as indicated by the red arrow below.
 (./src/assets/envfile.png)
 
 That's it!
-
-
-
-
-
-
-=======
-# React-Vite-TS Movies App
->>>>>>> a2e03420cea577af453694123b23b48924579f33
