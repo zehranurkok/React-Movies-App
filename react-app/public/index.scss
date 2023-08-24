@@ -1,25 +1,27 @@
-// @import "../node_modules/bootstrap/scss/bootstrap";
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+
+// We define our primary colors and font.
 
 $mainColor: #FFF;
 $mainColor-Red: #EE4B5E;
 $mainColor-Navy: #182957;
 $mainColor-Shadow:#1829575b;
-
 $greyLight-1: #E4EBF5;
 $greyLight-2: #c8d0e7;
 $greyLight-3: #bec8e4;
 $greyDark: #9baacf;
 
 $shadow: .2rem .2rem .6rem #182957b0, -.2rem -.2rem .5rem #fff;
+$shadow-img: .0rem .0rem .7rem #fff;
 $inner-shadow: inset .0rem .0rem .7rem  #c8d0e7;
   
 $mainFont: 'Roboto', sans-serif;
 
+
+// The following css properties are listed alphabetically.
 * {
   font-family: $mainFont;
 }
-
 
 body {
   color: $mainColor-Navy;
@@ -31,7 +33,7 @@ body {
   display: grid;
   grid-template-columns: repeat(5,1fr);
   grid-template-rows: repeat(2, 1fr);
-  margin: 10px 10px;
+  margin: 10px 10px 60px;
 }
 
 .card {
@@ -43,34 +45,52 @@ body {
   font-size: 14px;
   justify-content: center;
   margin: 20px;
+  position: relative;
+  transition: box-shadow .3s ease-out;
   
   &__title {
-    padding: 0px 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 20px 0px;
   }
 
   &__img {
-    
     img {
-      height: 100%;
+      border-radius: 1rem;
+      height: 320px;
       width: 100%;
+      
     }
   }
 
   &__context {
     flex-direction: row;
+    font-weight: bold;
+    justify-content: space-between;
     margin: 5px 20px;
   }
+}
 
-  &__imdb {
-    justify-content: flex-end;
-  }
+button {
+  background-color: #EE4B5E;
+  border-radius: 20px;
+  border: none;
+  color: $mainColor;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  transition: box-shadow .3s ease-out;
+}
 
-
+button:hover {
+  box-shadow: 1px 1px 5px 1px $mainColor-Navy;
 }
 
 .card:hover {
   box-shadow: 0px 0px 10px 1px $mainColor-Red;
-  cursor: pointer;
+  transform: scale(1.01);
 }
 
 .search {
@@ -167,5 +187,79 @@ footer{
       margin-left: 2.2rem;;
     }
   }
-
 }
+
+.genres{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  &__input {
+    background-color: #EE4B5E;
+    border-radius: 20px;
+    border: none;
+    color: $mainColor;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0px 5px;
+    padding: 5px 10px;
+    transition: box-shadow .3s ease-out;
+  }
+}
+
+.content {
+  animation-name: action;
+  animation-duration: 6s;
+  animation-delay: -3s;
+  background-color: $mainColor-Navy;
+  border-radius: 1rem;
+  color: $mainColor;
+  display: flex;
+  grid-column: 1 / 6;
+  grid-row: 6 / 1;
+  font-size: 14px;
+  flex-direction: column;
+  margin: 20px;
+  padding: 10px;
+  position: relative;
+  z-index: 2;
+  transition: box-shadow .3s ease-out;
+
+  &__area {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    justify-content: space-around;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+  }
+
+  &__img {
+    img {
+      border-radius: 1rem;
+      box-shadow: $shadow-img;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+
+
+@keyframes action {
+  0%   {background-color: $mainColor-Navy; top:0px;}
+  50%   {background-color: $mainColor-Shadow; bottom:100px;}
+  50%   {background-color: $mainColor-Red; bottom:200px;}
+  50%   {background-color: $mainColor-Shadow; bottom:100px;}
+  100% {background-color: $mainColor-Navy; bottom:0px;}
+}
+

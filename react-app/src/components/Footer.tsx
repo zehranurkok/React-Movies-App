@@ -2,8 +2,8 @@ interface Props {
     footer: string;
 }
 
+// Creating Footer section.
 function Footer({footer}: Props) {
-
   return (
     <>
     <footer className="footer">

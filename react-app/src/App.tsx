@@ -1,4 +1,3 @@
-
 import Header from "./components/Header";
 import Card from "./components/Card";
 import Footer from "./components/Footer";
@@ -9,33 +8,32 @@ import IconSearch from './assets/search.svg';
 
 function App() {
   
+  // Use of Hooks
   const [types, setTypes] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => { 
-    searchNames('Batman');
     document.title = 'Movies and TV Shows';
+    searchNames('Avengers');
   }, []);
 
-
+  // We combine the OMDb API URL and the custom Key that we will add to the .env file. 
+  // You can add the .env file to the root.
   const API_URL = 'http://www.omdbapi.com?apikey=' + import.meta.env.VITE_API_KEY;
 
+  // To search by name and year, we perform the following steps.
   const searchNames = async (title: any) => {
     const responseName = await fetch(`${ API_URL }&s=${ title }`);
     const data = await responseName.json();
     setTypes(data.Search);
+    console.log(data.Search);
   }
 
-  const searchYears = async (year: any) => {
-    const responseYear = await fetch(`${ API_URL }&y=${ year }`);
-    const data = await responseYear.json();
-    setTypes(data.Search);
-  }
-
+  // We add the components and perform the necessary steps to search.
   return <div>
-    
     <Header heading="Movies and TV Shows"/>
 
+    <div>
     <div className="search">
       <div>
         <input 
@@ -50,17 +48,20 @@ function App() {
         <img 
           src={ IconSearch } 
           alt="search" 
-          onClick={ ()=> searchNames(searchTerm) || searchYears(searchTerm)}
+          onClick={ () => searchNames(searchTerm)}
         />
       </div>
     </div>
+    </div>
 
     {
-      types?.length > 0 && ( <div className="container"> { types.map((type) => (<Card type = { type }/> ))} </div> )
+      types?.length > 0 && ( 
+          <div className="container"> 
+              { types.map((type) => (<Card type = { type } /> )) } 
+          </div> )
     }
 
-    <Footer footer="Zehra Nur Kök © "/>
-    
+    <Footer footer="Movies and TV Shows App created by Zehra Nur Kök © "/>
     </div>
 }
 
