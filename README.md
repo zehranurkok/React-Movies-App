@@ -18,7 +18,7 @@ npm install
 # Run the local server at localhost:8080
 npm run dev
 ```
-## Important
+# Important
 
 Please follow the steps below for the application to work properly.
 
