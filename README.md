@@ -29,16 +29,17 @@ You can [visit OMDb API Page](http://www.omdbapi.com/apikey.aspx) to get API Key
 
 Fill in the fields shown in red below.
 
-(./src/assets/omdbAPI1.png)
+![OMDbAPI1](./src/assets/omdbAPI1.png)
 
 Then check your mail and activate your API Key by clicking the link shown with the red arrow below.
 Copy your Key in the field that says YOUR KEY.
 
-(./src/assets/omdbAPI2.png)
+![OMDbAPI2](./src/assets/omdbAPI2.png)
 
 # 2. Use API Key
 
 Create your .env file in the root directory as indicated by the red arrow below. Then paste the Key that you copied into the area indicated by the red square.
-(./src/assets/envfile.png)
+
+![UseAPI](./src/assets/envfile.png)
 
 That's it!
